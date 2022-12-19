@@ -1,0 +1,45 @@
+﻿<Window x:Class="xLib.Windows.WindowSerialPort"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xLib"
+        mc:Ignorable="d"
+        Title="WindowComPortConnection" Height="110" MinHeight="130" MaxHeight="130" Width="321.995" MinWidth="350" MaxWidth="350" Background="#FF3F3F46">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="GridPropertys" Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="97*"/>
+                <ColumnDefinition Width="131*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35*" MinHeight="35" MaxHeight="35"/>
+                <RowDefinition Height="35*" MinHeight="35" MaxHeight="35"/>
+                <RowDefinition Height="274*"/>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="FindComPortsBox" ItemsSource="{Binding PortList}" Text="{Binding PortName}" IsEnabled="{Binding SelectIsEnable}" FontSize="16" Margin="10,3" BorderBrush="#FF979797" Grid.Row="1" Grid.Column="1">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF969699" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <Label Content="Baud rate:" Foreground="#FFDEC316" HorizontalAlignment="Right" Width="81" FontSize="16"/>
+            <Label Content="Port name:" Foreground="#FFDEC316" HorizontalAlignment="Right" Width="86" FontSize="16" Grid.Row="1"/>
+            <ComboBox x:Name="BaudRateBox" Text="{Binding BoadRate}" FontSize="16" ItemsSource="{Binding BaudRateList}" IsEditable="True" Margin="10,3" BorderBrush="#FF979797" Grid.Column="1">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF969699" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+        </Grid>
+        <Button x:Name="ButConnection" Content="{Binding Name}" Template="{DynamicResource ButtonTemplate1}" Foreground="#FFDEC316" Background="{Binding Background}" BorderBrush="#FF834545" Click="ConnectBut_Click" FontSize="16" Margin="0,8,5,0" Grid.Column="1" Height="65" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

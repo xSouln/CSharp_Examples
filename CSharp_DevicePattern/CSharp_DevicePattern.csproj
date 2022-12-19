@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95704192-39A3-40B4-9A7A-6FB529139D95}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Device</RootNamespace>
+    <AssemblyName>DevicePattern</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.5\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BrewGroup\Communication\Requests.cs" />
+    <Compile Include="BrewGroup\Communication\Responses.cs" />
+    <Compile Include="BrewGroup\Communication\Transactions\EventPacketBase.cs" />
+    <Compile Include="BrewGroup\Communication\Transactions\Events.cs" />
+    <Compile Include="BrewGroup\Communication\Transactions\Get.cs" />
+    <Compile Include="BrewGroup\Communication\Transactions\Set.cs" />
+    <Compile Include="BrewGroup\Communication\Transactions\TransactionBase.cs" />
+    <Compile Include="BrewGroup\Communication\Transactions\Try.cs" />
+    <Compile Include="BrewGroup\Communication\Transactions\Types.cs" />
+    <Compile Include="BrewGroup\Control.cs" />
+    <Compile Include="BrewGroup\Types\Types.cs" />
+    <Compile Include="BrewGroup\UI\Adapters\ButtonAdapter.cs" />
+    <Compile Include="BrewGroup\UI\Adapters\GridAdapter.cs" />
+    <Compile Include="BrewGroup\UI\Adapters\ImageAdapter.cs" />
+    <Compile Include="BrewGroup\UI\Adapters\ListViewAdapter.cs" />
+    <Compile Include="BrewGroup\UI\Adapters\TabControlAdapter.cs" />
+    <Compile Include="BrewGroup\UI\Calibration.cs" />
+    <Compile Include="BrewGroup\UI\Interfaces\IChangeSelector.cs" />
+    <Compile Include="BrewGroup\UI\Models\CalibrationViewModel.cs" />
+    <Compile Include="BrewGroup\UI\Models\ControlViewModel.cs" />
+    <Compile Include="BrewGroup\UI\Models\DeviceControlViewModel.cs" />
+    <Compile Include="BrewGroup\UI\Models\MotionStateViewModel.cs" />
+    <Compile Include="BrewGroup\UI\Models\OptionsViewModel.cs" />
+    <Compile Include="BrewGroup\UI\Models\StatusViewModel.cs" />
+    <Compile Include="BrewGroup\UI\MotionState.cs" />
+    <Compile Include="BrewGroup\UI\Options.cs" />
+    <Compile Include="BrewGroup\UI\Status.cs" />
+    <Compile Include="Carousel\Communication\Requests.cs" />
+    <Compile Include="Carousel\Communication\Responses.cs" />
+    <Compile Include="Carousel\Communication\Transactions\EventPacketBase.cs" />
+    <Compile Include="Carousel\Communication\Transactions\Events.cs" />
+    <Compile Include="Carousel\Communication\Transactions\Get.cs" />
+    <Compile Include="Carousel\Communication\Transactions\Set.cs" />
+    <Compile Include="Carousel\Communication\Transactions\TransactionBase.cs" />
+    <Compile Include="Carousel\Communication\Transactions\Try.cs" />
+    <Compile Include="Carousel\Communication\Transactions\Types.cs" />
+    <Compile Include="Carousel\Control.cs" />
+    <Compile Include="Carousel\Types\Types.cs" />
+    <Compile Include="Carousel\UI\Adapters\ButtonAdapter.cs" />
+    <Compile Include="Carousel\UI\Adapters\GridAdapter.cs" />
+    <Compile Include="Carousel\UI\Adapters\ImageAdapter.cs" />
+    <Compile Include="Carousel\UI\Adapters\ListViewAdapter.cs" />
+    <Compile Include="Carousel\UI\Adapters\TabControlAdapter.cs" />
+    <Compile Include="Carousel\UI\Calibration.cs" />
+    <Compile Include="Carousel\UI\Interfaces\IChangeSelector.cs" />
+    <Compile Include="Carousel\UI\Models\CalibrationViewModel.cs" />
+    <Compile Include="Carousel\UI\Models\ControlViewModel.cs" />
+    <Compile Include="Carousel\UI\Models\DeviceControlViewModel.cs" />
+    <Compile Include="Carousel\UI\Models\MotionStateViewModel.cs" />
+    <Compile Include="Carousel\UI\Models\OptionsViewModel.cs" />
+    <Compile Include="Carousel\UI\Models\StatusViewModel.cs" />
+    <Compile Include="Carousel\UI\MotionState.cs" />
+    <Compile Include="Carousel\UI\Options.cs" />
+    <Compile Include="Carousel\UI\Status.cs" />
+    <Compile Include="FlowDirector\Communication\Requests.cs" />
+    <Compile Include="FlowDirector\Communication\Responses.cs" />
+    <Compile Include="FlowDirector\Communication\Transactions\EventPacketBase.cs" />
+    <Compile Include="FlowDirector\Communication\Transactions\Events.cs" />
+    <Compile Include="FlowDirector\Communication\Transactions\Get.cs" />
+    <Compile Include="FlowDirector\Communication\Transactions\Set.cs" />
+    <Compile Include="FlowDirector\Communication\Transactions\TransactionBase.cs" />
+    <Compile Include="FlowDirector\Communication\Transactions\Try.cs" />
+    <Compile Include="FlowDirector\Communication\Transactions\Types.cs" />
+    <Compile Include="FlowDirector\Control.cs" />
+    <Compile Include="FlowDirector\Types\Types.cs" />
+    <Compile Include="FlowDirector\UI\Adapters\ButtonAdapter.cs" />
+    <Compile Include="FlowDirector\UI\Adapters\GridAdapter.cs" />
+    <Compile Include="FlowDirector\UI\Adapters\ImageAdapter.cs" />
+    <Compile Include="FlowDirector\UI\Adapters\ListViewAdapter.cs" />
+    <Compile Include="FlowDirector\UI\Adapters\TabControlAdapter.cs" />
+    <Compile Include="FlowDirector\UI\Calibration.cs" />
+    <Compile Include="FlowDirector\UI\Interfaces\IChangeSelector.cs" />
+    <Compile Include="FlowDirector\UI\Models\CalibrationViewModel.cs" />
+    <Compile Include="FlowDirector\UI\Models\ControlViewModel.cs" />
+    <Compile Include="FlowDirector\UI\Models\DeviceControlViewModel.cs" />
+    <Compile Include="FlowDirector\UI\Models\MotionStateViewModel.cs" />
+    <Compile Include="FlowDirector\UI\Models\OptionsViewModel.cs" />
+    <Compile Include="FlowDirector\UI\Models\StatusViewModel.cs" />
+    <Compile Include="FlowDirector\UI\MotionState.cs" />
+    <Compile Include="FlowDirector\UI\Options.cs" />
+    <Compile Include="FlowDirector\UI\Status.cs" />
+    <Compile Include="RGBCups\Communication\Requests.cs" />
+    <Compile Include="RGBCups\Communication\Responses.cs" />
+    <Compile Include="RGBCups\Communication\Transactions\EventPacketBase.cs" />
+    <Compile Include="RGBCups\Communication\Transactions\Events.cs" />
+    <Compile Include="RGBCups\Communication\Transactions\Get.cs" />
+    <Compile Include="RGBCups\Communication\Transactions\Set.cs" />
+    <Compile Include="RGBCups\Communication\Transactions\TransactionBase.cs" />
+    <Compile Include="RGBCups\Communication\Transactions\Try.cs" />
+    <Compile Include="RGBCups\Communication\Transactions\Actions.cs" />
+    <Compile Include="RGBCups\Control.cs" />
+    <Compile Include="RGBCups\UI\Cup.cs" />
+    <Compile Include="RGBCups\UI\Models\CupsViewModel.cs" />
+    <Compile Include="RGBCups\UI\Models\CupViewModel.cs" />
+    <Compile Include="RGBCups\UI\Models\StatusViewModel.cs" />
+    <Compile Include="RGBCups\UI\Status.cs" />
+    <Compile Include="RGBCups\Types\Types.cs" />
+    <Compile Include="RGBCups\UI\Adapters\ButtonAdapter.cs" />
+    <Compile Include="RGBCups\UI\Adapters\GridAdapter.cs" />
+    <Compile Include="RGBCups\UI\Adapters\ImageAdapter.cs" />
+    <Compile Include="RGBCups\UI\Adapters\ListViewAdapter.cs" />
+    <Compile Include="RGBCups\UI\Models\ColorControlViewModel.cs" />
+    <Compile Include="RGBCups\UI\Models\ControlViewModel.cs" />
+    <Compile Include="Device\Communication\Transactions\EventPacketBase.cs" />
+    <Compile Include="Device\Communication\Transactions\TransactionBase.cs" />
+    <Compile Include="Camera\Communication\Transactions\EventPacketBase.cs" />
+    <Compile Include="Camera\Communication\Transactions\TransactionBase.cs" />
+    <Compile Include="Slider\Communication\Requests.cs" />
+    <Compile Include="Slider\Communication\Responses.cs" />
+    <Compile Include="Slider\Communication\Transactions\EventPacketBase.cs" />
+    <Compile Include="Slider\Communication\Transactions\Events.cs" />
+    <Compile Include="Slider\Communication\Transactions\Get.cs" />
+    <Compile Include="Slider\Communication\Transactions\Set.cs" />
+    <Compile Include="Slider\Communication\Transactions\TransactionBase.cs" />
+    <Compile Include="Slider\Communication\Transactions\Try.cs" />
+    <Compile Include="Slider\Communication\Transactions\Types.cs" />
+    <Compile Include="Slider\Control.cs" />
+    <Compile Include="Slider\Types\Types.cs" />
+    <Compile Include="Slider\UI\Adapters\ButtonAdapter.cs" />
+    <Compile Include="Slider\UI\Adapters\GridAdapter.cs" />
+    <Compile Include="Slider\UI\Adapters\ImageAdapter.cs" />
+    <Compile Include="Slider\UI\Adapters\ListViewAdapter.cs" />
+    <Compile Include="Slider\UI\Adapters\TabControlAdapter.cs" />
+    <Compile Include="Slider\UI\Interfaces\IChangeSelector.cs" />
+    <Compile Include="Slider\UI\Models\ControlViewModel.cs" />
+    <Compile Include="Slider\UI\Models\DeviceControlViewModel.cs" />
+    <Compile Include="Slider\UI\Models\OptionsViewModel.cs" />
+    <Compile Include="Slider\UI\Models\StatusViewModel.cs" />
+    <Compile Include="Slider\UI\Options.cs" />
+    <Compile Include="Slider\UI\Status.cs" />
+    <Compile Include="Terminal\UI\Adapters\TabControlAdapter.cs" />
+    <Compile Include="Terminal\UI\Models\ControlViewModel.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Json.cs" />
+    <Compile Include="Device\UI\Adapters\ButtonAdapter.cs" />
+    <Compile Include="Device\UI\Adapters\GridAdapter.cs" />
+    <Compile Include="Device\Communication\Transactions\Types.cs" />
+    <Compile Include="Device\UI\Adapters\ImageAdapter.cs" />
+    <Compile Include="Device\UI\Adapters\ListViewAdapter.cs" />
+    <Compile Include="Device\UI\Models\ControlViewModel.cs" />
+    <Compile Include="Device\UI\Models\InfoViewModel.cs" />
+    <Compile Include="Camera\UI\Adapters\ImageAdapter.cs" />
+    <Compile Include="Camera\UI\Adapters\ListViewAdapter.cs" />
+    <Compile Include="Camera\Communication\Transactions\Types.cs" />
+    <Compile Include="Camera\UI\Adapters\TabControlAdapter.cs" />
+    <Compile Include="Camera\UI\Configuration.cs" />
+    <Compile Include="Camera\UI\Models\ConfigurationViewModel.cs" />
+    <Compile Include="Camera\UI\Models\ControlViewModel.cs" />
+    <Compile Include="Camera\UI\Models\DriverViewModel.cs" />
+    <Compile Include="Camera\UI\Models\OptionsViewModel.cs" />
+    <Compile Include="Camera\UI\Models\SnapshotViewModel.cs" />
+    <Compile Include="Camera\UI\Snapshot.cs" />
+    <Compile Include="Terminal\Communications.cs" />
+    <Compile Include="Device\Control.cs" />
+    <Compile Include="Terminal\Control.cs" />
+    <Compile Include="Device\Communication\Transactions\Events.cs" />
+    <Compile Include="Device\Communication\Transactions\Get.cs" />
+    <Compile Include="Device\Communication\Requests.cs" />
+    <Compile Include="Device\Communication\Transactions\Set.cs" />
+    <Compile Include="Device\Communication\Transactions\Try.cs" />
+    <Compile Include="Device\Communication\Responses.cs" />
+    <Compile Include="Device\Types\Types.cs" />
+    <Compile Include="Camera\UI\Adapters\ButtonAdapter.cs" />
+    <Compile Include="Camera\UI\Adapters\GridAdapter.cs" />
+    <Compile Include="Camera\Control.cs" />
+    <Compile Include="Device\UI\Info.cs" />
+    <Compile Include="Camera\Communication\Requests.cs" />
+    <Compile Include="Camera\Communication\Responses.cs" />
+    <Compile Include="Camera\Communication\Transactions\Try.cs" />
+    <Compile Include="Camera\Communication\Transactions\Events.cs" />
+    <Compile Include="Camera\Communication\Transactions\Get.cs" />
+    <Compile Include="Camera\Communication\Transactions\Set.cs" />
+    <Compile Include="Camera\Types\Types.cs" />
+    <Compile Include="Camera\UI\Driver.cs" />
+    <Compile Include="Camera\UI\Options.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xLib\xLib.csproj">
+      <Project>{debe0863-3e66-4124-8e1a-0cb434227a5b}</Project>
+      <Name>xLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BrewGroup\UI\Views\" />
+    <Folder Include="Camera\UI\Resources\" />
+    <Folder Include="Carousel\UI\Views\" />
+    <Folder Include="Device\UI\Resources\" />
+    <Folder Include="FlowDirector\UI\Views\" />
+    <Folder Include="Slider\UI\Views\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>
